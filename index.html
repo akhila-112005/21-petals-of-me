@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>21 Petals | Akhila's Flower Garden</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background-color: #fffdf5;
+            color: #4b4b3f;
+            line-height: 1.7;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee2a8;
+            padding: 20px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #b38a00;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #696550;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #c29b00;
+        }
+
+        .hero {
+            min-height: 650px;
+            background-color: #fff8cf;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            padding: 75px 8%;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .small-heading {
+            color: #b38a00;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: #8d6d00;
+            font-size: 95px;
+            font-weight: normal;
+            line-height: .9;
+            margin: 18px 0 25px;
+        }
+
+        .hero h2 {
+            color: #625d42;
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #716f60;
+            font-size: 17px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #d5ae20;
+            color: #ffffff;
+            padding: 13px 28px;
+            margin-top: 28px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-button:hover {
+            background-color: #b38a00;
+        }
+
+        .hero-image {
+            height: 510px;
+            overflow: hidden;
+        }
+
+        .hero img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+}
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #b38a00;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            color: #8d6d00;
+            font-size: 48px;
+            font-weight: normal;
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+            color: #777566;
+        }
+
+        .flowers {
+            background-color: #ffffff;
+        }
+
+        .flower-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .flower-card {
+            background-color: #ffffff;
+            border: 1px solid #eee2a8;
+        }
+
+        .flower-image {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .flower-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flower-content {
+            padding: 25px;
+        }
+
+        .month {
+            color: #c29b00;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .flower-content h3 {
+            color: #8d6d00;
+            font-size: 28px;
+            font-weight: normal;
+            margin: 3px 0;
+        }
+
+        .meaning {
+            color: #a39869;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        details {
+            border-top: 1px solid #eee8c9;
+            padding-top: 14px;
+            margin-top: 14px;
+        }
+
+        summary {
+            color: #a27e00;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .flower-story {
+            padding-top: 17px;
+            color: #706f63;
+            font-size: 15px;
+        }
+
+        .flower-story p {
+            margin-bottom: 14px;
+        }
+
+        .flower-story strong {
+            color: #8d6d00;
+        }
+
+        .song {
+            color: #a27e00;
+            font-weight: bold;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .quote {
+            background-color: #fff8cf;
+            border-left: 3px solid #d5ae20;
+            padding: 13px;
+            font-style: italic;
+        }
+
+        .about {
+            background-color: #fff8cf;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            color: #8d6d00;
+            font-size: 50px;
+            font-weight: normal;
+            margin: 10px 0 20px;
+        }
+
+        .about-content p {
+            color: #706f63;
+            margin-bottom: 18px;
+        }
+
+        .qualities {
+            background-color: #ffffff;
+        }
+
+        .quality-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .quality-card {
+            background-color: #fffdf5;
+            border: 1px solid #eee2a8;
+        }
+
+        .quality-image {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .quality-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quality-content {
+            padding: 22px;
+        }
+
+        .quality-content h3 {
+            color: #8d6d00;
+            font-size: 26px;
+            font-weight: normal;
+            margin-bottom: 6px;
+        }
+
+        .quality-content p {
+            color: #706f63;
+        }
+
+        .quality-quote {
+            color: #a27e00;
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        .growth {
+            background-color: #fff8cf;
+        }
+
+        .growth-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .growth-item {
+            background-color: #ffffff;
+            border: 1px solid #eee2a8;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .growth-item img {
+            width: 95px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+
+        .growth-item h3 {
+            color: #8d6d00;
+            font-size: 21px;
+            font-weight: normal;
+        }
+
+        .growth-item p {
+            color: #777566;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .video-section {
+    background: #f7f3df;
+}
+
+.video-box {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    border: 1px solid #e8dfbf;
+}
+
+.video-box video {
+    width: 100%;
+    height: 500px;
+    border: 0;
+    display: block;
+}
+
+.video-caption {
+    padding: 18px 25px;
+    color: #6c6c59;
+    text-align: center;
+    font-size: 14px;
+}
+
+        .gallery {
+            background-color: #fffdf5;
+        }
+
+        .gallery-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-photo img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .letter {
+            background-color: #fff8cf;
+        }
+
+        .letter-box {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            border: 1px solid #eee2a8;
+            padding: 55px;
+        }
+
+        .letter-box h2 {
+            color: #8d6d00;
+            font-size: 45px;
+            font-weight: normal;
+            margin: 10px 0 25px;
+        }
+
+        .letter-box p {
+            color: #706f63;
+            margin-bottom: 15px;
+        }
+
+        .letter-box strong {
+            color: #8d6d00;
+        }
+
+        .ending {
+            background-color: #d5ae20;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 25px;
+        }
+
+        .ending span {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .ending h2 {
+            font-size: 62px;
+            font-weight: normal;
+            margin: 15px 0;
+        }
+
+        .ending p {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #6e5b19;
+            color: #fff8cf;
+            text-align: center;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 950px) {
+            header {
+                flex-direction: column;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .flower-list,
+            .quality-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .growth-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 13px;
+                justify-content: center;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .flower-list,
+            .quality-list,
+            .growth-list,
+            .gallery-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2,
+            .about-content h2 {
+                font-size: 38px;
+            }
+
+            .letter-box {
+                padding: 30px 22px;
+            }
+
+            .letter-box h2 {
+                font-size: 35px;
+            }
+
+            .ending h2 {
+                font-size: 43px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="#home" class="logo">21 PETALS</a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#flowers">Flowers</a>
+        <a href="#about">About</a>
+        <a href="#qualities">My Qualities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#letter">Letter</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="small-heading">A little garden by Akhila</span>
+
+            <h1>21<br>Petals</h1>
+
+            <h2>Twenty-one flowers for twenty-one years.</h2>
+
+            <p>
+                A personal flower garden where every petal represents
+                something I have felt, learned, loved, dreamed about,
+                or hope to become.
+            </p>
+
+            <a href="#flowers" class="hero-button">
+                Enter My Garden
+            </a>
+
+        </div>
+
+        <figure class="hero-image">
+
+            <img src="images/hero.jpg" alt="A beautiful yellow flower garden">
+
+        </figure>
+
+    </section>
+
+
+    <section class="flowers" id="flowers">
+
+        <div class="section-title">
+
+            <span>January to December</span>
+
+            <h2>My Year in Flowers</h2>
+
+            <p>
+                Twelve months, twelve flowers and twelve little thoughts
+                about growing through life.
+            </p>
+
+        </div>
+
+
+        <div class="flower-list">
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/january-snowdrop.jpg" alt="White snowdrop flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">January</span>
+
+                    <h3>Snowdrop</h3>
+
+                    <p class="meaning">New Beginnings</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                January feels like opening a completely new page.
+                                The snowdrop reminds me that even the smallest
+                                beginning can become something beautiful.
+                            </p>
+
+                            <p class="quote">
+                                "You don't need to know the whole journey.
+                                Sometimes you only need the courage to begin."
+                            </p>
+
+                            
+
+                            <audio controls>
+                                <source src="audio/january.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/february-rose.jpg" alt="Pink rose flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">February</span>
+
+                    <h3>Rose</h3>
+
+                    <p class="meaning">Love</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                A rose is beautiful, but it also has thorns.
+                                Love can be soft without being perfect.
+                            </p>
+
+                            <p class="quote">
+                                "Keep the people who make ordinary moments
+                                feel like memories."
+                            </p>
+
+
+                            <audio controls>
+                                <source src="audio/february.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/march-daffodil.jpg" alt="Yellow daffodil flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">March</span>
+
+                    <h3>Daffodil</h3>
+
+                    <p class="meaning">Fresh Beginnings</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Daffodils feel like sunlight after a long winter.
+                                They remind me that something fresh can arrive
+                                when we least expect it.
+                            </p>
+
+                            <p class="quote">
+                                "There is always another morning waiting ahead."
+                            </p>
+
+
+                            <audio controls>
+                                <source src="audio/march.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/april-tulip.jpg" alt="Yellow tulip flowers">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">April</span>
+
+                    <h3>Tulip</h3>
+
+                    <p class="meaning">Happiness</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Happiness does not always have to be a huge moment.
+                                Sometimes it is simply a song, a smile or a peaceful evening.
+                            </p>
+
+                            <p class="quote">
+                                "Don't become so busy chasing tomorrow that
+                                you forget to enjoy today."
+                            </p>
+
+                           
+
+                            <audio controls>
+                                <source src="audio/april.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/may-sunflower.jpg" alt="Bright yellow sunflower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">May</span>
+
+                    <h3>Sunflower</h3>
+
+                    <p class="meaning">Hope</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Sunflowers turn toward the light.
+                                I want to remember to do the same during
+                                difficult days.
+                            </p>
+
+                            <p class="quote">
+                                "Keep looking for the light, even when the day
+                                feels a little darker."
+                            </p>
+
+                          
+                            <audio controls>
+                                <source src="audio/may.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/june-peony.jpg" alt="Pink peony flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">June</span>
+
+                    <h3>Peony</h3>
+
+                    <p class="meaning">Self-worth</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                A peony takes time to open.
+                                It does not rush its beauty, and maybe
+                                I should not rush myself either.
+                            </p>
+
+                            <p class="quote">
+                                "You don't have to become someone else
+                                to deserve beautiful things."
+                            </p>
+
+                            <audio controls>
+                                <source src="audio/june.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/july-lavender.jpg" alt="Lavender flowers">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">July</span>
+
+                    <h3>Lavender</h3>
+
+                    <p class="meaning">Peace</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Lavender feels like a quiet evening.
+                                Not every moment needs to be productive.
+                            </p>
+
+                            <p class="quote">
+                                "Rest is also part of growing."
+                            </p>
+
+                            
+                        
+
+                            <audio controls>
+                                <source src="audio/july.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/august-hibiscus.jpg" alt="Red hibiscus flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">August</span>
+
+                    <h3>Hibiscus</h3>
+
+                    <p class="meaning">Courage</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Hibiscus is bright and unapologetic.
+                                It reminds me that courage sometimes means
+                                simply showing up as yourself.
+                            </p>
+
+                            <p class="quote">
+                                "Be brave enough to take up space in your own story."
+                            </p>
+
+                            
+
+                            <audio controls>
+                                <source src="audio/august.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/september-lotus.jpg" alt="Pink lotus flower">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">September</span>
+
+                    <h3>Lotus</h3>
+
+                    <p class="meaning">Growth</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                The lotus grows through water and still opens
+                                beautifully above it.
+                            </p>
+
+                            <p class="quote">
+                                "Where you started does not decide where you bloom."
+                            </p>
+
+                            <audio controls>
+                                <source src="audio/september.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/october-cherry-blossom.jpg" alt="Cherry blossom flowers">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">October</span>
+
+                    <h3>Cherry Blossom</h3>
+
+                    <p class="meaning">Change</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Cherry blossoms remind us that beautiful things
+                                can also be temporary.
+                            </p>
+
+                            <p class="quote">
+                                "You are allowed to outgrow the version
+                                of yourself you once knew."
+                            </p>
+
+                            <audio controls>
+                                <source src="audio/october.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/november-babys-breath.jpg" alt="Baby's breath flowers">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">November</span>
+
+                    <h3>Baby's Breath</h3>
+
+                    <p class="meaning">Gratitude</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Baby's breath is small but rarely unnoticed.
+                                Little things can quietly make something beautiful.
+                            </p>
+
+                            <p class="quote">
+                                "Sometimes the smallest moments become
+                                the memories we keep the longest."
+                            </p>
+
+                            <audio controls>
+                                <source src="audio/november.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+
+            <article class="flower-card">
+
+                <figure class="flower-image">
+                    <img src="images/december-jasmine.jpg" alt="White jasmine flowers">
+                </figure>
+
+                <div class="flower-content">
+
+                    <span class="month">December</span>
+
+                    <h3>Jasmine</h3>
+
+                    <p class="meaning">Memories & Dreams</p>
+
+                    <details>
+
+                        <summary>Read my thought</summary>
+
+                        <div class="flower-story">
+
+                            <p>
+                                Jasmine reminds me of familiar places,
+                                quiet evenings and memories that stay with us.
+                            </p>
+
+                            <p class="quote">
+                                "Carry your memories with you, but leave enough
+                                space for new dreams."
+                            </p>
+
+                            <audio controls>
+                                <source src="audio/december.mp3" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="about" id="about">
+
+        <figure class="about-image">
+
+            <img src="images/akhila.jpg" alt="Flowers growing in a sunny garden">
+
+        </figure>
+
+        <div class="about-content">
+
+            <span class="small-heading">The idea behind 21 Petals</span>
+
+            <h2>Not just flowers.</h2>
+
+            <p>
+                Every flower in this garden represents something
+                I want to remember while growing through life.
+            </p>
+
+            <p>
+                Some flowers represent months.
+                Some represent feelings.
+                Some represent dreams, courage, memories and
+                the little things that make me who I am.
+            </p>
+
+            <p>
+                I called it <strong>21 Petals</strong> because twenty-one
+                is more than just an age.
+                It is a collection of everything that has grown,
+                changed and stayed with me.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="qualities" id="qualities">
+
+        <div class="section-title">
+
+            <span>Flowers that represent me</span>
+
+            <h2>Things I Want To Grow</h2>
+
+            <p>
+                Nine flowers for nine qualities I want to carry
+                into the next chapter of my life.
+            </p>
+
+        </div>
+
+
+        <div class="quality-list">
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/orchid.jpg" alt="Purple orchid flower">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Confidence</h3>
+
+                    <p>
+                        Orchid — unique, graceful and comfortable
+                        being different.
+                    </p>
+
+                    <p class="quality-quote">
+                        "I don't have to become someone else to belong."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/marigold.jpg" alt="Orange marigold flowers">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Warmth</h3>
+
+                    <p>
+                        Marigold — bright, welcoming and full of warmth.
+                    </p>
+
+                    <p class="quality-quote">
+                        "Be the kind of person whose presence feels like sunshine."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/hydrangea.jpg" alt="Blue hydrangea flowers">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Emotional Strength</h3>
+
+                    <p>
+                        Hydrangea — a flower that represents feelings,
+                        depth and changing shades.
+                    </p>
+
+                    <p class="quality-quote">
+                        "Feeling deeply does not make me weak."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/magnolia.jpg" alt="White magnolia flower">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Grace</h3>
+
+                    <p>
+                        Magnolia — calm beauty and quiet strength.
+                    </p>
+
+                    <p class="quality-quote">
+                        "I can grow without rushing."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/iris.jpg" alt="Purple iris flower">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Dreams</h3>
+
+                    <p>
+                        Iris — connected with imagination, hope and dreams.
+                    </p>
+
+                    <p class="quality-quote">
+                        "Some dreams take longer, but they are still worth dreaming."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/gardenia.jpg" alt="White gardenia flower">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Quiet Confidence</h3>
+
+                    <p>
+                        Gardenia — soft on the outside but memorable
+                        and strong in its presence.
+                    </p>
+
+                    <p class="quality-quote">
+                        "I don't need to be loud to know my worth."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/plumeria.jpg" alt="White and yellow plumeria flowers">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Joy</h3>
+
+                    <p>
+                        Plumeria — a reminder to leave room for simple happiness.
+                    </p>
+
+                    <p class="quality-quote">
+                        "Growing older should never mean forgetting how to smile."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/touch-me-not.jpg" alt="Touch-me-not plant">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Sensitivity</h3>
+
+                    <p>
+                        Touch-me-not — delicate, responsive and quietly expressive.
+                    </p>
+
+                    <p class="quality-quote">
+                        "I want to keep the gentle part of myself."
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="quality-card">
+
+                <figure class="quality-image">
+                    <img src="images/garden-rose.jpg" alt="Yellow garden rose">
+                </figure>
+
+                <div class="quality-content">
+
+                    <h3>Becoming</h3>
+
+                    <p>
+                        Garden Rose — because there is still so much
+                        of me left to discover.
+                    </p>
+
+                    <p class="quality-quote">
+                        "I don't have to have everything figured out yet."
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="growth">
+
+        <div class="section-title">
+
+            <span>A small reminder</span>
+
+            <h2>My Garden Needs Time</h2>
+
+            <p>
+                These are the things I want to keep watering.
+            </p>
+
+        </div>
+
+
+        <div class="growth-list">
+
+            <article class="growth-item">
+
+                <img src="images/may-sunflower.jpg" alt="Sunflower representing hope">
+
+                <h3>Confidence</h3>
+
+                <p>
+                    Trusting myself a little more every day.
+                </p>
+
+            </article>
+
+
+            <article class="growth-item">
+
+                <img src="images/marigold.jpg" alt="Marigold representing warmth">
+
+                <h3>Kindness</h3>
+
+                <p>
+                    Staying gentle without losing strength.
+                </p>
+
+            </article>
+
+
+            <article class="growth-item">
+
+                <img src="images/iris.jpg" alt="Iris representing dreams">
+
+                <h3>Curiosity</h3>
+
+                <p>
+                    Always finding something new to learn.
+                </p>
+
+            </article>
+
+
+            <article class="growth-item">
+
+                <img src="images/orchid.jpg" alt="Orchid representing uniqueness">
+
+                <h3>Creativity</h3>
+
+                <p>
+                    Making things simply because I enjoy creating them.
+                </p>
+
+            </article>
+
+
+            <article class="growth-item">
+
+                <img src="images/september-lotus.jpg" alt="Lotus representing growth">
+
+                <h3>Growth</h3>
+
+                <p>
+                    Becoming better without comparing my journey.
+                </p>
+
+            </article>
+
+
+            <article class="growth-item">
+
+                <img src="images/garden-rose.jpg" alt="Garden rose representing becoming">
+
+                <h3>Happiness</h3>
+
+                <p>
+                    Making space for the little things that matter.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="video-section">
+
+        <div class="section-title">
+
+            <span>A little moving memory</span>
+
+            <h2>My Garden</h2>
+
+            <p>
+                A quiet visual pause between all the petals.
+            </p>
+
+        </div>
+
+    <figure class="video-box">
+
+        <video controls poster="images/garden.mp4">
+    <source src="video/garden.mp4" type="video/mp4">
+    Your browser does not support the video element.
+</video>
+
+        <figcaption class="video-caption">
+            A little garden, a little movement and a lot of memories.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+    <section class="gallery" id="gallery">
+
+        <div class="section-title">
+    <span>A Little Collection</span>
+    <h2>Things That Caught My Eye</h2>
+    <p>
+        Twenty-one little scenes from nature, quiet moments and things I simply loved looking at.
+    </p>
+</div>
+
+
+        <div class="gallery-list">
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-01.jpg" alt="A personal memory 1">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-02.jpg" alt="A personal memory 2">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-03.jpg" alt="A personal memory 3">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-04.jpg" alt="A personal memory 4">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-05.jpg" alt="A personal memory 5">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-06.jpg" alt="A personal memory 6">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-07.jpg" alt="A personal memory 7">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-08.jpg" alt="A personal memory 8">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-09.jpg" alt="A personal memory 9">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-10.jpg" alt="A personal memory 10">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-11.jpg" alt="A personal memory 11">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-12.jpg" alt="A personal memory 12">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-13.jpg" alt="A personal memory 13">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-14.jpg" alt="A personal memory 14">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-15.jpg" alt="A personal memory 15">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-16.jpg" alt="A personal memory 16">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-17.jpg" alt="A personal memory 17">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-18.jpg" alt="A personal memory 18">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-19.jpg" alt="A personal memory 19">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-20.jpg" alt="A personal memory 20">
+            </figure>
+
+            <figure class="gallery-photo">
+                <img src="images/gallery-21.jpg" alt="A personal memory 21">
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <section class="letter" id="letter">
+
+        <div class="letter-box">
+
+            <span class="small-heading">For the girl I will become</span>
+
+            <h2>A Letter to My Future Self</h2>
+
+            <p>
+                <strong>Dear Future Me,</strong>
+            </p>
+
+            <p>
+                If you're reading this, another year has passed.
+            </p>
+
+            <p>
+                Maybe everything happened exactly as you hoped.
+                Maybe it didn't.
+            </p>
+
+            <p>
+                Maybe some flowers bloomed early,
+                some bloomed late,
+                and some are still waiting for their season.
+            </p>
+
+            <p>
+                That's okay.
+            </p>
+
+            <p>
+                You were never meant to bloom all at once.
+            </p>
+
+            <p>
+                You are allowed to grow slowly.
+                You are allowed to change your dreams.
+                You are allowed to begin again.
+                You are allowed to become someone you haven't imagined yet.
+            </p>
+
+            <p>
+                So wherever you are when you read this —
+            </p>
+
+            <p>
+                <strong>Keep going.</strong>
+            </p>
+
+            <p>
+                There are still mornings you haven't seen,
+                people you haven't met, places you haven't visited,
+                songs you haven't heard, and flowers you haven't stopped to notice.
+            </p>
+
+            <p>
+                <strong>Your story is still blooming.</strong>
+            </p>
+
+            <p>
+                — A little letter from Akhila's flower garden
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="ending">
+
+        <span>One last thing</span>
+
+        <h2>Keep Blooming, Akhila.</h2>
+
+        <p>
+            Twenty-one petals. Twelve months. A thousand possibilities.
+        </p>
+
+        <p>
+            Your best flowers may not have bloomed yet.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        21 PETALS · A LITTLE FLOWER GARDEN · MADE WITH HTML & CSS
+    </p>
+
+</footer>
+<script>
+const songs = document.querySelectorAll("audio");
+
+songs.forEach(song => {
+    song.addEventListener("play", () => {
+        songs.forEach(otherSong => {
+            if (otherSong !== song) {
+                otherSong.pause();
+                otherSong.currentTime = 0;
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
+</body>
+
+</html>
